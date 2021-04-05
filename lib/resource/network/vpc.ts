@@ -1,6 +1,4 @@
-import { Stack, StackProps } from 'aws-cdk-lib';
-import { IVpc, Port, SecurityGroup, SubnetConfiguration, SubnetType, Vpc } from 'aws-cdk-lib/lib/aws-ec2';
-import { Construct } from 'constructs';
+import { SubnetConfiguration, SubnetType } from 'aws-cdk-lib/lib/aws-ec2';
 
 
 export function vpcProps(subnetConfigurations: SubnetConfiguration[]) {
@@ -11,11 +9,8 @@ export function vpcProps(subnetConfigurations: SubnetConfiguration[]) {
     }
 }
 
-export function subnetConfigurations() {
-    return [SubnetType.ISOLATED, SubnetType.PUBLIC].map(type => subnetConfig(type))
-}
 
-function subnetConfig(type: SubnetType) {
+export function subnetConfig(type: SubnetType) {
     return {
         cidrMask: 18, subnetType: type, name: type
     }
