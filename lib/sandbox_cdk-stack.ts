@@ -9,7 +9,7 @@ export class SandboxCdkStack extends Stack {
     super(scope, id, props);
     const networkStack = new NetworkStack(this, "network")
     const securityStack = new SecurityStack(this, "security", { vpc: networkStack.vpc })
-    const serviceStack = new ServiceStack(this, "service", { vpc: networkStack.vpc, subnet: networkStack.subnet.public, securityGroup: securityStack.securityGroup, role: securityStack.role })
+    const serviceStack = new ServiceStack(this, "service", { vpc: networkStack.vpc, subnet: networkStack.subnet.public, securityGroup: securityStack.securityGroup })
   }
 
 
