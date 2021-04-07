@@ -21,4 +21,5 @@ export class ServiceStack extends Stack {
         new Instance(this, "ubuntu", ec2Props(props.vpc, props.subnet, props.securityGroup.internal, ssmRole))
             .addSecurityGroup(props.securityGroup.toInternet)
     }
+
 }
