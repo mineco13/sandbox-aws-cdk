@@ -1,0 +1,8 @@
+{
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "typescript.preferences.quoteStyle": "double",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    }
+}
