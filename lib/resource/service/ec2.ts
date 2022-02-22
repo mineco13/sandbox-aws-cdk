@@ -10,14 +10,14 @@ import {
 } from "aws-cdk-lib/lib/aws-ec2";
 import { IRole } from "aws-cdk-lib/lib/aws-iam";
 
-export function ec2Props(vpc: IVpc, subnet: SubnetSelection, securityGroup: ISecurityGroup, role: IRole): InstanceProps {
+export function ec2Props(vpc: IVpc, subnet: SubnetSelection, securityGroup: ISecurityGroup, role: IRole, userName: string): InstanceProps {
   return {
-    instanceName: "Ubuntu",
+    instanceName: `${userName}-ubuntu`,
     instanceType: InstanceType.of(InstanceClass.T2, InstanceSize.MICRO),
     machineImage: MachineImage.genericLinux({
       "us-east-1": "ami-042e8287309f5df03",
     }),
-    keyName: "aws_admin",
+    keyName: "brave_developer",
     vpc: vpc,
     vpcSubnets: subnet,
     securityGroup: securityGroup,

@@ -3,9 +3,9 @@ import { IInstance } from "aws-cdk-lib/lib/aws-ec2";
 import {
   IGroup,
   PolicyStatementProps,
-  UserProps,
+  UserProps
 } from "aws-cdk-lib/lib/aws-iam";
-import { config } from "../../../bin/sandbox_cdk";
+import { config } from "../../config/config";
 
 export function userProps(userName: string, groups: IGroup[]): UserProps {
   return {
